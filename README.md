@@ -1,0 +1,2 @@
+# rickywriter
+freewriting web app
