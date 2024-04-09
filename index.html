@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rickywriter</title>
+    <meta name="title" content="rickywriter | Online writing app w/ built-in freewriting game.">
+<meta name="description" content="Unleash your creativity with this free online writing tool with its unique built-in freewriting game! Draft, edit, and improve your writing in a fun and engaging way.">
+<meta name="keywords" content="freewriting game, rickywriter app, freewriting app, freewriting tool, writing app, writing tool, writing game, online writing app"><meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+<meta name="author" content="Ricky 'Bushman' Browne">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- Primary Meta Tags -->
+<title>rickywriter | Online writing tool</title>
+<meta name="title" content="rickywriter | Online writing tool">
+<meta name="description" content="w/ Built-in freewriting game.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rickybrowne.com/rickywriter/">
+<meta property="og:title" content="rickywriter | Online writing tool">
+<meta property="og:description" content="w/ Built-in freewriting game.">
+<meta property="og:image" content="https://rickybrowne.com/rickywriter/rickywriter.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://rickybrowne.com/rickywriter/">
+<meta property="twitter:title" content="rickywriter | Online writing tool">
+<meta property="twitter:description" content="w/ Built-in freewriting game.">
+<meta property="twitter:image" content="https://rickybrowne.com/rickywriter/rickywriter.png">
+
+    <link rel="stylesheet" type="text/css" href="writerv2.css">
+    <script src="https://unpkg.com/@grammarly/editor-sdk?clientId=client_AUZAWAGqFTC7NW88KKhkeV"></script>
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CJR7KVFVQM"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-F70H7CX161');
+</script>
+<body>
+<div id="containerW">
+    <div id="containerX">
+        <div id="left0">    
+                              
+                  <div id="menuArea" style="overflow-x: auto; " class="lif">
+                   
+                                <ul class="horizontal-list icons Runs">
+                                   
+                                    <li class="minus hidden" title=" Smaller Text"><a href="#">–</a></li>
+                                    <li class="restext hidden" title=" Reset Text"><a href="#">A</a></li>
+                                    <li class="plus hidden" title=" Larger Text"><a href="#">+</a></li>
+                                    <li class="editor" title=" Editor Mode"><a href="#">📜</a></li>
+                                        <li class="dgo hidden" title=" Save Text File"><a href="#">📥</a></li>
+                                        <li class="ugo" title=" Import Text File"><a href="#" >📂</a></li>
+                                        <li class="free" title=" Fullscreen"><a href="#">🖵</a></li>
+                                        <li class="clear hidden" title=" Clear Document"><a href="#">🗑️</a></li>
+                                        <li class="delete hidden" onclick="deleteDoc()" title="Delete Document"><a href="#">❌</a></li>
+                                        <li class="learn" title=""><a href="#about">💡 Learn more</a></li>
+                                        <li class="about" title=""><a href="#help">⚡ Help</a></li>
+                                        <li class="new"  title=" New Document"><a href="#">➕</a></li>
+                                    </ul>
+                                   
+                </div>
+ <div id="nameArea" style="overflow-x: auto;  border: 0;" class="lif">
+                                <span class="docs hidden"  title=" Home"><a href="#">🪶</a></span><span id="tabbut" class="home2" title="rickywriter " ><a href="https://rickybrowne.com/rickywriter"> 🪶</a></span>
+                    <span id="tabname" class="tabname" ></span>
+                 </div>
+                <div id="flasher" style="overflow-x: auto;" class="textz lif hidden flasher">
+                                    <span id="Notice"> </span>
+                </div>
+                <grammarly-editor-plugin id="shell"><div id="div1" contenteditable="plaintext-only" class="div1a textz"></div></grammarly-editor-plugin>
+                
+                <div id="gameArea" style="overflow-x: auto;" class="textz lif hidden">
+                        <span id="play" class="emoji hidden" title=" Play Freewriting Game " onclick="playG()"><img src="play.png" alt="Play Button" height="60"></span>
+                        <span id="noplay" class="emoji hidden" title=" Concede Defeat " onclick="stopG()"><img src="stop.png" alt="Stop Button" height="60"></span>
+                        <span id="ender" class="hidden"> &nbsp;🎯</span>
+                        
+                        <span class="Runs"> 
+                        <span id="wordCount" class="settings"></span>
+                        <span id="timers" class="time">00:00:00</span>
+                        <span id="livesC" class="hidden"><span id="liveslabel" class="settings"> | Lives:</span> 
+                        <span id="hearts" class="time">&#10084;&#10084;&#10084;</span></span>
+                        <span id="scoreC" class="hidden"> <span id="scorelabel" class="settings"> | Score: </span>
+                        <span id="scorebox" class="time"> 0 </span></span>
+                        <span id="tscoreC" class="hidden"> <span id="scorelabel" class="settings"> | Total score: </span>
+                        <span id="tscorebox" class="time"> 0 </span></span>
+                        <span id="model" class="hidden"><span id="modeinf" class="settings"> | Mode:</span> 
+                        <span id="medium" class="toggleon" onclick="loadMode('hard');">Medium</span>
+                        <span id="hard" class="toggleon hidden" onclick="loadMode('insane');">Hard</span>
+                        <span id="easy" class="toggleon hidden" onclick="loadMode('medium');">Easy</span>
+                        <span id="insane" class="toggleon hidden" onclick="loadMode('easy');">Insane</span> </span>
+
+                        
+                </div>
+                <div id="frontStat" style="overflow-x: auto; " class="textz lif">
+                    <span class="Runs">
+                    <span id="timeScre" class="settingsX">Total hours: </span><span id="timeScore"
+                        class="toggleb settingsX"  onclick="resetT();"">0.00</span>
+                    <span id="WtimeScre" class="settingsX">| This week: </span><span id="WtimeScore"
+                        class="toggleb settingsX"  onclick="resetW();"">0.00</span>
+                    <span id="topScre" class="settingsX">| Top score: </span><span id="topScore"
+                        class="toggleb settingsX" onclick="resetTS();">0</span>
+                    <span id="gameContainer" class="settingsX"> | Game: </span><span id="gameo"
+                        class="toggleon settingsX" onclick="gameFunction(1);">On</span>
+                    </span>
+                </div>
+                <div id="div0"   class="textz lif">
+                    <div id="liSt"></div>
+                    
+                  
+                    
+                    </div>  
+                    <div id="about"   class="textz lif">
+                        <span id="screenNote">The screen width on this device is too small to run the rickywriter program!</span>     
+<br /><br /><br /><br /><br /><br />           
+                        <h1> 🪶 <br />The rickywriter online writing application</h1>
+                        <h3><a href="#gameinfo">with built-in freewriting game.</a></h3> 
+                        
+                        <p><b>With the rickywriter program, you can easily draft & edit your work, and in doing so smash your writing goals. The app comes with a built-in <a href="#freewriting">freewriting</a> game that provides the impetus to start typing, then keeps you typing while you rack up points, it pushes you to get the words down and develops your writing practice through the utilisation of the <a href="#freewriting">freewriting method</a> in combination with the <a href="#gameinfo">game itself</a>.</b></p>
+                                            
+                        <p><i>The app doesn't require a login, and your information is not saved in the cloud.</i></p>
+                                            
+                        <p>In summary, <b>rickywriter</b> is a powerful little tool that can help you practice the art of writing in a fun and engaging way. With its built-in game mode, default drafting mode and a separate editing tool. This web app is perfect for anyone looking to up their writing game and it to the next level.</p>
+                        
+                        <h1 id="gameinfo">🎯 The rickywriter freewriting game</h1>
+                        
+                        <p><b>The built-in game allows you to gamify the practice of <a href="#freewriting">freewriting</a> and helps you plough through your first drafts or write what's on your mind and what needs to be said. The game helps you get the words out, by helping people overcome the concept of writer's block and other psychological blockages that hold a person back from putting the words on the page.</b></p>
+                        
+                        <h2>Gameplay</h2>
+                        <p>You start with three lives. You can receive extra lives. And you lose lives if you stop typing for too long; you gain points for word count and time spent writing. If you lose all your lives, the game is over, but you get to keep what you've written. It shows you your score and records your high score. The goal is to beat your that score or score above a certain amount before stopping, or even just to keep writing for as long as you are able. <i>After losing a life, the game will not start again until you once again start typing.</i></p>
+                        
+                        <h2 id="freewriting">What is freewriting?</h2> 
+<p><i>"Freewriting is a technique in which the author writes their thoughts quickly and continuously, without worrying about form, style, or even grammar. Alongside brainstorming, freewriting is typically used early in the writing process to collect and manifest one's thoughts."</i> - Grammarly Blog.</p>
+                        
+                        <p><b>The goal of freewriting is to get you as a writer to practice your craft and put in the time. Freewriting is not about writing the perfect sentence, it's about capturing your flow of thought without the interruptions of worrying about proper grammar or spelling mistakes or saying things exactly the right way. It gives you permission to write rubbish.</b></p> 
+                        
+                        <p>It's what writing a first draft should be about. Dumping your thoughts on a subject or getting down a story onto the page, as to be later crafted through editing into something worth reading. Some people edit while they write, but it should be about keeping up with the thought process and capturing all the ideas and narratives that start flowing when you kick into gear and start typing.</p> 
+
+<p><i>"The water doesn't flow until the tap is turned on!" — Louis L'Amour.</i></p> 
+                        
+                        <p>Freewriting frees you up to make mistakes which can make you a better, more thorough and ultimately more prolific writer. It's not about perfection, it's about allowing yourself to find your flow as a writer. Even if that means writing complete rubbish, or nonsense, it's still writing! Which is a whole lot more productive than staring at a blank screen.</p>
+                        
+                        <h1>About 🪶rickywriter</h1>
+                        
+                        <p><b>rickywriter has three writing functions;</b> the first function is for drafting, with its small visible window, draft mode is about getting the words in your head onto the page, rather than having the focus on the words already written.</p>
+                        <p>The second is the game function which ties in with draft mode, but with the built-in game function activated, you can gamify your writing practice. You can plough through first drafts, or practise freewriting and write whatever comes to mind while you get better at your craft.</p>
+                        <p>The third and final function, editor mode, is for editing your work, the built-in editor opens fullscreen so you can focus on the words you've already written. That's when you can start crafting your crap into something special.</p>
+
+<p><i>It's perfectly fine to draft your work in editor mode also!</i></p>
+                        
+                        <h2 id="save">Saving your progress and your work</h2> 
+
+                        <p class="red"><i><b>Note:</b>This app should not be used for storing documents. Once you are finished writing a piece it should either be downloaded into a folder as a text file backed up online to ensure you don't lose your work, in the situation that your hard drive crashes or you lose your device.</i></p>
+                        
+                        <p><b>rickywriter automatically saves your progress as you go, there are no save buttons. Document data is stored in your browser to be accessed later. It is not saved or backed up online and is only accessible from the computer you are using. <span class="red">If you clear your browser's stored data you will lose your documents.</span> So make sure you download all your progress if you wish to clean up your browser to remove bloat. In Chrome clearing "Cookies and other site data" will delete all your documents. You are however able to delete 'Cached Images and Files' without deleting your documents.</b></p>
+                        
+                        <p><b>rickywriter</b> saves in localStorage and has a maximum limit of 5MB in most browsers. This is around 2500000 words. Although this is a lot of words, don't keep your entire manuscript in this app. Keep chapters saved in your text file folder, and re-import them as chapters if you want to do all your writing and editing in this app, otherwise, store your writing elsewhere where you know it is safe.</p>
+                        
+                        <p><b>Document limits:</b> This app allows you to be working on a maximum of 30 documents at a time as its purpose is not for storing data or your works, it is only for items you are currently either writing or editing.</p>
+                        
+                        <h2>Using this app as a daily journal</h2> 
+                        <p>This idea is to not keep your daily journal entries saved inside this app but to use the same diary document every day, then save each diary entry into your writing folder as a text file before clearing that entry in your diary document as to be used the following day in the same process.</p>
+                        
+                        </div>
+                        
+                        <div id="help"   class="textz lif">
+                        
+                        <h1>🛟 Help</h1>
+                        
+                        <p><b>The notes panel:</b> On the right side of every open document is a notes panel where you can write information that you don't want to be included in the main document, the information you may find helpful like reminders and outlines. The notes panel scrolls separately from the main document so you can look at any part of the document without losing your place on the notes panel and vice versa. The home page also has a notes panel, to keep information regarding all your writing and documents like your goals. The notes panel saves automatically when changes are made.</p>
+                        <p><b>Opening Documents:</b> All your documents are displayed in the documents list on the front page and on document pages underneath the document itself. To open a document simply select the document you wish to open and click on the documents name.</p>
+                        <p><b>Creating Documents:</b> By clicking on the '➕' symbol in the main menu the app creates a new document after prompting you to give your new doc a name.</p>
+                        <p><b>Renaming Documents:</b> To rename a document, find the document you wish to rename in the documents list and click on the '〰️' symbol to the left of the documents name.</p>
+                        <p><b>Editing Documents:</b> To use the full-screen document editor, open a document and click the '📜' symbol in the document menu. Once in editing mode, the third-party Grammarly software will work. If you have the Grammarly plugin installed, its functions will be present in both drafting and editing modes. If you turn off the plugin when using this app. Grammarly will only appear in editor mode as it is built-in into the app. The Grammarly plugin overrides the built-in functionality. </p>
+                        <p><b>Deleting & Clearing Documents:</b> The clear document icon is represented by a waste paper basket '🗑️' in the document menu. Clearing a document removes all text from the document but does not delete the document itself. To delete a document click on the '❌' symbol in the document menu. After a document has been deleted it will not appear in the documents list and cannot be recovered.</p>
+                        <p><b>Importing Documents:</b> To import a text file into one of your open documents, click the folder icon '📂' in the document menu and then select a .txt file from your computer. On import, the text inside the text file will be added to the bottom of the document, below any existing text stored in the document.</p>
+                        <p><b>Exporting documents and saving them as a text file:</b> To export a document as a text file, open a document and click the '📥' icon in the document menu and save it locally. <a href="#save">Click here for more information on saving your work.</a></p>
+                        <p><b>Starting and stopping the built-in game:</b>If the game function is set to 'on' on the home page there will be a large play icon once you open a document, it is displayed below the document itself. When you wave your mouse over the button the text will say "Play freewriting game", once you click the play button the application will go into game mode and the game will commence as soon as you start typing. To stop the game or 'concede defeat' click the big red stop button below the document text window. After clicking the stop button your stats will appear.</p>
+                        <p><b>Turning off game functions:</b> On the home page in the centre of the screen is your writing stats, to the right of your stats it will say 'Game: <u>On</u>' by default, you can click the underlined 'on' text and it will change to 'off'. To turn the game back on, simply click the 'off' text and it will change to on and game functionality will be restored.</p>
+                        <p><b>Easy, Medium, Hard, and Insane Modes:</b> The object of the game is to keep typing, if you stop typing, the screen will flash yellow and if you don't start typing shortly after that warning flash, the screen will flash red and you will lose a life. <b>The different modes have different times between when you stop typing and the yellow warning flash is shown, and also the time between the warning flash and the death flash. To change modes simply click on the underlined mode text until you find a mode that suits you.</b></p>
+                        <p><b>Resetting stats:</b> On the home page there are three stats on the stats panel in the middle of the screen, 'Total hours', 'This week', and 'Top score'. By clicking on the stats themselves in red you can reset them back to zero.</p>
+                        <p><b>The ding:</b> While writing you'll hear a ding to let you know every time five minutes have gone by, when you hear that sound you should be happy because you got through another five minutes as a writer,</p>
+                        
+                        <h2 id="menus">The Document Menu</h2>
+                        <p><b>– A + 📜 📥 📂 🖵 🗑️ ❌ ➕</b></p>
+                    
+                        <p><b>Text Size *( - A + )</b><br />
+                        – This makes all text smaller incrementally.<br />
+                        A This resets the text size to the default.<br />
+                        + This enlarges all text incrementally.<br />
+                        <i>*Your text size settings are saved automatically and will remain saved until changed, even if the browser is closed.</i>
+                        </p>
+                        
+                        <p><b>📜 Editor Mode</b> This takes you into full-screen editing mode where you can see more of your document. 
+                        </p>
+                        
+                        <p><b>📥 Save text file</b> This saves the document as a text file on your computer. It is recommended that once your document is complete you save it. You should have a folder on your computer that contains your saved text files and have that folder backed up automatically online. (This application does not back up your writing, it is stored in the browser locally on the device being used.) <a href="#save">Click here for more information on saving your work.</a>
+                        </p>
+                        
+                        <p><b>📂 Import text file</b> This imports a .txt file into the document that is open. The text will appear below any existing text inside the open document.
+                        </p>
+                        
+                        <p><b>🖵 Maximise/Minimise Screen</b> Click this icon to take the browser window fullscreen and click it again to go back to normal.
+                        </p> 
+                        
+                        <p><b>🗑️ Clear document</b> The empty basket clears your document of all content. It does not delete the document.</p>
+                        
+                        <p><b>❌ Delete Document</b> This will delete the document, once confirmed the document cannot be recovered and will not be shown in your documents list.
+                        </p>
+                        
+                        <p><b>➕ New Document</b> By clicking this icon a new document will be created once you give the document a name. Your new document will then appear in your documents list.
+                        </p>
+                </div> 
+
+                   
+                <div align="center" id="creator"  class="textz lif"><br /><br /><br /><br /><br /><br /> Import Data (WILL DELETE ALL EXISTING DATA!)<br /><input type="file" id="importFile" accept=".json" onchange="importLocalStorage(event);" />
+                    <br /><br /><br /><br />
+                    <button onclick="exportLocalStorage();">Export All Data</button>
+                    <br /><br /><br /><br /> <button onclick="confirmAndClearLocalStorage();">DELETE ALL DATA (WARNING: THIS IS PERMANENT!) </button><br /><br /><br /><br /><br /><br />   by <a class="txt" target="_blank"
+                            href="https://rickybrowne.com">Ricky Browne</a><input type="file" id="file-input" style="display: none;">
+
+
+                </div>
+                    
+        </div>
+           
+
+
+        <div id="right0" contenteditable="true">
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+        <script type="text/javascript" src="writerv2.js"></script>
+
+
+
+
+</body>
+
+</html>
